@@ -1,6 +1,7 @@
 import React from 'react';
+import View from './components/View.jsx';
 
-React.render(
-	React.createElement(AppView, {basePath: basePath}),
+export default React.render(
+	React.createElement(View),
 	document.getElementById('content')
 );

@@ -1,0 +1,78 @@
+.promise-button {
+	&:focus {
+		outline: none;
+	}
+	-webkit-appearance: none;
+	border: none;
+	position: relative;
+	margin: .5rem;
+	padding: 0;
+	overflow: hidden;
+	border-radius:3px;
+	text-transform: none;
+	letter-spacing: 0;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4);
+	border: 1px solid rgba(0,0,0,0.5);
+	font-weight: 600;
+	padding: 0.5em 1.5em;
+
+	& > .sizer {
+		visibility: hidden;
+	}
+
+
+	& > ul {
+		list-style-type: none;
+		font-size: inherit;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;//force the flex calculations to bebased on this element. (100% referse to the button's height)
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: top .25s ease-in;
+
+		//both the UL and the LI's need to be flex boxes.
+		& , & > li {
+			display: flex;
+			align-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		& > li {
+			&:first-child > span {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate3d(-50%, -50%, 0);
+			}
+			flex: 0 0 100%; //account for the border width, 100% here refers to the UL's height.
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+
+			&.processing {
+				& > ul.tinyloader {
+					align-items: center;
+					display: flex;
+					flex: 1 1 auto;
+				}
+			}
+		}
+	}
+
+	&.processing {
+		& > ul {
+			transform: translate3d(0, -100%, 0);
+			transition: transform .25s ease-in;
+		}
+	}
+
+	&.finished > ul {
+		transform: translate3d(0, -200%, 0);
+		transition: transform .25s ease-in;
+	}
+
+}
