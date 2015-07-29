@@ -1,17 +1,23 @@
+@import 'reset';
 @import 'promise-button';
+
+body {
+	background: #ffeecc;
+}
 
 .tinyloader {
 	margin: 0;
 	text-align: center;
 	li {
+		$size: .5em;
 		display: inline-block;
-		width: 10px;
-		height: 10px;
+		width: $size;
+		height: $size;
 		padding:0;
-		background: lightgray;
+		background: rgba(128,128,128,.5);
 		border-radius: 2px;
 		opacity:0;
-		margin-right: 2px;
+		margin-right: $size/4;
 		will-change: opacity;
 		&:nth-child(1) {
 			animation: tinyloader .7s ease-in-out infinite;

@@ -5,10 +5,16 @@ import PromiseButton from './PromiseButton.jsx';
 export default React.createClass({
 	displayName: 'This is a view.',
 
+	doSomething () {
+		return new Promise( (resolve, reject) => {
+			setTimeout(resolve, 10000);
+		} );
+	},
+
 	render () {
 		return (
 			<div>
-				<PromiseButton>Start</PromiseButton>
+				<PromiseButton onClick={this.doSomething}>Start</PromiseButton>
 			</div>
 		);
 	}

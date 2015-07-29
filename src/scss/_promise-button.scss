@@ -1,7 +1,10 @@
 .promise-button {
+	font-size: 3rem;
 	&:focus {
 		outline: none;
 	}
+	background: linear-gradient(white, #eee);
+	box-shadow: 0 1px 0px 1px white;
 	-webkit-appearance: none;
 	border: none;
 	position: relative;
@@ -11,7 +14,7 @@
 	border-radius:3px;
 	text-transform: none;
 	letter-spacing: 0;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4);
+	// box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4);
 	border: 1px solid rgba(0,0,0,0.5);
 	font-weight: 600;
 	padding: 0.5em 1.5em;
@@ -54,6 +57,10 @@
 			padding: 0;
 
 			&.processing {
+				box-shadow: inset 0px 0px 4px 1px rgba(128, 128, 128, .2);
+				background: rgba(240, 240, 240, 1);
+				background: linear-gradient(#eee, white);
+    			width: 100%;
 				& > ul.tinyloader {
 					align-items: center;
 					display: flex;
