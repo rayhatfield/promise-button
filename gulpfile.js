@@ -48,17 +48,6 @@ gulp.task('clean', function() {
 	del(['./dist/**/*']);
 });
 
-// gulp.task('autoprefixer', function () {
-// 	var postcss      = require('gulp-postcss');
-// 	var sourcemaps   = require('gulp-sourcemaps');
-// 	var autoprefixer = require('autoprefixer-core');
-// 	return gulp.src('./src/*.css')
-// 		.pipe(sourcemaps.init())
-// 		.pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
-// 		.pipe(sourcemaps.write('.'))
-// 		.pipe(gulp.dest('./dest'));
-// });
-
 gulp.task('watch', function() {
 	gulp.watch('src/scss/**/*.scss', ['css']);
 });
