@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var browserify = require('browserify');
 var babelify = require('babelify');
 var del = require('del');
-var copy = require('gulp-copy');
 var sass = require('gulp-sass');
 var util = require('gulp-util');
 var buffer = require('vinyl-buffer');
@@ -31,12 +30,24 @@ gulp.task('css', function() {
 });
 
 gulp.task('copy', function() {
+	var copy = require('gulp-copy');
 	return gulp.src(['./src/index.html', './src/fonts'])
 		.pipe(copy('./dist/', {prefix: 1}));
 });
 
 gulp.task('clean', function() {
 	del(['./dist/**/*']);
+});
+
+gulp.task('autoprefixer', function () {
+	var postcss      = require('gulp-postcss');
+	var sourcemaps   = require('gulp-sourcemaps');
+	var autoprefixer = require('autoprefixer-core');
+	return gulp.src('./src/*.css')
+		.pipe(sourcemaps.init())
+		.pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+		.pipe(sourcemaps.write('.'))
+		.pipe(gulp.dest('./dest'));
 });
 
 gulp.task('default', ['css', 'build', 'copy']);
