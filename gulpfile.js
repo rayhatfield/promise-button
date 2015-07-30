@@ -23,9 +23,19 @@ gulp.task('build', function() {
 		.pipe(gulp.dest('./dist/js'));
 });
 
+gulp.task('sass', function() {
+	return gulp.src('./src/scss/**/*.scss')
+		.pipe(sass().on('error', sass.logError));
+});
+
 gulp.task('css', function() {
+	var postcss      = require('gulp-postcss');
+	var sourcemaps   = require('gulp-sourcemaps');
+	var autoprefixer = require('autoprefixer-core');
 	return gulp.src('./src/scss/**/*.scss')
 		.pipe(sass().on('error', sass.logError))
+		.pipe(sourcemaps.init())
+		.pipe(postcss([autoprefixer()]))
 		.pipe(gulp.dest('./dist/css'))
 });
 
@@ -38,15 +48,19 @@ gulp.task('clean', function() {
 	del(['./dist/**/*']);
 });
 
-gulp.task('autoprefixer', function () {
-	var postcss      = require('gulp-postcss');
-	var sourcemaps   = require('gulp-sourcemaps');
-	var autoprefixer = require('autoprefixer-core');
-	return gulp.src('./src/*.css')
-		.pipe(sourcemaps.init())
-		.pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
-		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('./dest'));
+// gulp.task('autoprefixer', function () {
+// 	var postcss      = require('gulp-postcss');
+// 	var sourcemaps   = require('gulp-sourcemaps');
+// 	var autoprefixer = require('autoprefixer-core');
+// 	return gulp.src('./src/*.css')
+// 		.pipe(sourcemaps.init())
+// 		.pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+// 		.pipe(sourcemaps.write('.'))
+// 		.pipe(gulp.dest('./dest'));
+// });
+
+gulp.task('watch', function() {
+	gulp.watch('src/scss/**/*.scss', ['css']);
 });
 
-gulp.task('default', ['css', 'build', 'copy']);
+gulp.task('default', ['css', 'build', 'copy', 'watch']);

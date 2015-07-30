@@ -14,15 +14,15 @@
     "browserify": "^11.0.1",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-postcss": "^5.1.10",
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
     "react-tools": "^0.13.3",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "webpack": "^1.10.5",
-    "webpack-dev-server": "^1.10.1"
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
