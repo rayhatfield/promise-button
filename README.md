@@ -1,5 +1,5 @@
 # Promise Button
-This component presents a button that can be used to kick off an asynchronous process and display simple status feedback: ready, processing, and complete.
+This [React](https://github.com/facebook/react) component presents a button that can be used to kick off an asynchronous process and display simple status feedback: ready, processing, and complete.
 
 See the live demo at [http://rayhatfield.io/promise-button/](http://rayhatfield.io/promise-button/).
 
