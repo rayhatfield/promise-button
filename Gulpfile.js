@@ -31,7 +31,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('copy', function() {
-	return gulp.src('./src/index.html')
+	return gulp.src(['./src/index.html', './src/fonts'])
 		.pipe(copy('./dist/', {prefix: 1}));
 });
 

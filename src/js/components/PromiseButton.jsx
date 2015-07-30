@@ -115,7 +115,7 @@ export default React.createClass({
 				<ul>
 					<li><span>{children}</span></li>
 					<li className="processing"><TinyLoader /></li>
-					<li className="finished"></li>
+					<li className="finished icon-checkmark"></li>
 				</ul>
 			</button>
 		);
