@@ -1,0 +1,64 @@
+{
+	"IcoMoonType": "selection",
+	"icons": [
+		{
+			"icon": {
+				"paths": [
+					"M864 128l-480 480-224-224-160 160 384 384 640-640z"
+				],
+				"attrs": [],
+				"tags": [
+					"checkmark",
+					"tick",
+					"correct",
+					"accept",
+					"ok"
+				],
+				"grid": 16
+			},
+			"attrs": [],
+			"properties": {
+				"id": 980,
+				"order": 1,
+				"prevSize": 32,
+				"ligatures": "checkmark, tick",
+				"name": "checkmark",
+				"code": 58880
+			},
+			"setIdx": 0,
+			"setId": 0,
+			"iconIdx": 272
+		}
+	],
+	"height": 1024,
+	"metadata": {
+		"name": "icomoon"
+	},
+	"preferences": {
+		"showGlyphs": true,
+		"showQuickUse": true,
+		"showQuickUse2": true,
+		"showSVGs": true,
+		"fontPref": {
+			"prefix": "icon-",
+			"metadata": {
+				"fontFamily": "icomoon"
+			},
+			"metrics": {
+				"emSize": 1024,
+				"baseline": 6.25,
+				"whitespace": 50
+			},
+			"embed": false
+		},
+		"imagePref": {
+			"prefix": "icon-",
+			"png": true,
+			"useClassSelector": true,
+			"color": 4473924,
+			"bgColor": 16777215
+		},
+		"historySize": 100,
+		"showCodes": false
+	}
+}
