@@ -30,9 +30,8 @@ gulp.task('css', function() {
 });
 
 gulp.task('copy', function() {
-	var copy = require('gulp-copy');
-	return gulp.src(['./src/index.html', './src/fonts'])
-		.pipe(copy('./dist/', {prefix: 1}));
+	gulp.src('./src/*.html').pipe(gulp.dest('dist'));
+	gulp.src('./src/fonts').pipe(gulp.dest('./dist/fonts'));
 });
 
 gulp.task('clean', function() {
